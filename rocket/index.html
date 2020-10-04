@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="rocket">
+        </div>
+    </div>
+</body>
+<script>
+    function randomNum(m, n){
+        return Math.ceil(Math.random() * (n - m + 1)) + m - 1;
+    }
+    function createMoveBg(){
+        let num = 40;
+        for (let index = 0; index < num; index++) {
+            const i = document.createElement("i");
+            i.style.height = randomNum(5, 10) + 'px';
+            i.style.left = randomNum(10, 90) + 'vw';
+            i.style.animationDuration = randomNum(5, 30) / 10  + 's'; 
+            document.querySelector('.container').appendChild(i);
+        }
+    }
+    createMoveBg();
+</script>
+</html>

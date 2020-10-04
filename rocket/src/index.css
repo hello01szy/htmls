@@ -1,0 +1,74 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: #222222;
+    position: relative;
+
+}
+.rocket{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    background-image: url(./rocket.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    animation: shake 0.8s linear infinite;
+    z-index: 10;
+}
+/* 添加尾翼火焰 */
+.rocket::after{
+    position: absolute;
+    content: "";
+    /* width: 30px;
+    height: 40px; */
+    width: 10px;
+    height: 0;
+    border-top: 40px solid #0092f2;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-image: linear-gradient(180deg, #0092f2, transparent);
+    bottom: 9.5%;
+    left: 50.1%;
+    transform: translate(-50%, -50%);
+}
+
+.container i{
+    width: 1px;
+    height: 2px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-color: #ffffff;
+    animation: move 1s linear infinite;
+}
+
+/* 定义动画内容 */
+@keyframes shake{
+    0%{
+        transform: translate(-50%, -50%) scale(0.6) translateY(0px);
+    }
+    50%{
+        transform: translate(-50%, -50%) scale(0.6) translateY(-8px);
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(0.6) translateY(0px);
+    }
+}
+
+/* 定义背景移动动画 */
+@keyframes move{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(90vh);
+    }
+}
