@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+		position: relative;
+		background-color: #40739e;
+}
+.notFound{
+    width: 470px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.notFound span{
+    flex: 1;
+		display: inline-block;
+		width: 150px;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 140px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+.notFound span:nth-child(1){
+	animation: font-color-left 4s linear infinite;
+}
+.notFound span:nth-child(3){
+	animation: font-color-right 4s linear infinite;
+}
+.notFound span:nth-child(2){
+    margin-left: 10px;
+		margin-right: 10px;
+		display: flex;
+		justify-content: center;
+		position: relative;
+}
+.center::before,
+.center::after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+		height: 150px;
+		border-radius: 50%;
+    box-shadow: 
+    inset 20px 0px 0 #fd79a866,
+    inset 0px 20px 0 #0984e366,
+    inset -20px 0px 0 #00b89466,
+		inset 0px -20px 0 #fdcd6e66;
+		animation: colors 4s linear infinite;
+}
+.center::after{
+    transform: rotate(-45deg);
+}
+.pic{
+	position: absolute;
+	left: 800px;
+	top: 40px;
+	transform: scale(0.2);
+}
+
+@keyframes colors{
+    0%{
+			box-shadow:
+					inset 20px 0px 0 #fd79a866,
+					inset 0px 20px 0 #0984e366,
+					inset -20px 0px 0 #00b89466,
+					inset 0px -20px 0 #fdcd6e66
+    }
+    25%{
+			box-shadow:
+				inset 20px 0px 0 #fdcd6e66,
+				inset 0px 20px 0 #fd79a866,
+				inset -20px 0px 0 #0984e366,
+				inset 0px -20px 0 #00b89466
+    }
+    50%{
+			box-shadow:
+				inset 20px 0px 0 #00b89466,
+				inset 0px 20px 0 #fdcd6e66,
+				inset -20px 0px 0 #fd79a866,
+				inset 0px -20px 0 #0984e366
+    }
+    75%{
+			box-shadow:
+				inset 20px 0px 0 #0984e366,
+				inset 0px 20px 0 #00b89466,
+				inset -20px 0px 0 #fdcd6e66,
+				inset 0px -20px 0 #fd79a866
+    }
+    100%{
+			box-shadow:
+				inset 20px 0px 0 #fd79a866,
+				inset 0px 20px 0 #0984e366,
+				inset -20px 0px 0 #00b89466,
+				inset 0px -20px 0 #fdcd6e66
+    }
+}
+
+@keyframes font-color-left{
+	0%{
+		color:#fd79a866;
+	}
+	25%{
+		color:#fdcd6e66;
+	}
+	50%{
+		color:#00b89466;
+	}
+	75%{
+		color:#0984e366;
+	}
+	100%{
+		color:#fd79a866;
+	}
+}
+@keyframes font-color-right{
+	0%{
+		color:#00b89466;
+	}
+	25%{
+		color:#0984e366;
+	}
+	50%{
+		color:#fd79a866;
+	}
+	75%{
+		color:#fdcd6e66;
+	}
+	100%{
+		color:#00b89466;
+	}
+}
