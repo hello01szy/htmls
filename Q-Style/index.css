@@ -1,0 +1,110 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+.container{
+	width: 100vw;
+	height: 100vh;
+	background-color: #282923;
+	position: relative;
+}
+.share{
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, 0%) scale(0);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: white;
+	border-radius: 20px;
+}
+.share::after{
+	position: absolute;
+	content: '';
+	width: 10px;
+	height: 10px;
+	transform: translate(-50%, -50%) rotate(45deg);
+	top: 100%;
+	left: 50%;
+	background-color: white;
+}
+#btn{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	background-color: white;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#btn::after,
+#btn::before{
+	content: '';
+	border-radius: 4px;
+}
+.open{
+	animation: ele_dance 0.6s linear 1 both;
+}
+.open2{
+	animation: menu_dance 1s linear 1 both;
+}
+#btn::after{
+	position: absolute;
+	width: 5px;
+	height: 60%;
+	background-color: #282923;
+}
+
+#btn::before{
+	position: absolute;
+	width: 60%;
+	height: 5px;
+	background-color: #282923;
+}
+
+@keyframes ele_dance{
+	0%{
+		transform: translate(-50%, -50%) scale(1) rotate(0deg);
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.459);
+	}
+	50%{
+		transform: translate(-50%, -50%) scale(0.8) rotate(45deg);
+	}
+	100%{
+		transform: translate(-50%, -50%) scale(1) rotate(0deg);
+	}
+}
+
+@keyframes menu_dance{
+	0%{
+		transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+	}
+	30%{
+		transform: translate(-50%, -180%) scaleX(1.02) scaleY(1.02);
+	}
+	60%{
+		transform: translate(-50%, -220%) scaleX(1) scaleY(1);
+	}
+	80%{
+		transform: translate(-50%, -220%) scaleX(1.02) scaleY(1.02);
+	}
+	90%{
+		transform: translate(-50%, -220%) scaleX(1) scaleY(1);
+	}
+	95%{
+		transform: translate(-50%, -220%) scaleX(1.02) scaleY(1.02);
+	}
+	100%{
+		transform: translate(-50%, -220%) scaleX(1) scaleY(1);
+	}
+}
+
